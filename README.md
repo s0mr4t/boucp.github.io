@@ -9,23 +9,25 @@
 This site is mainly created for storing main topic about algorithm, data structure and related problems.
 
 # How this site created
-Thanks to mcdocs and mcdocs-material open source developers.
+Thanks to mkdocs and mkdocs-material open source python developers.
 This site is created only by python packages.
+There are a lot of ways to build and deploy mkdocs static site.
+This is one of the simplest ways to build and deploy in github.  
 first install python and then install pip in terminal.
-then
+then install mkdocs.
 ```bash
 $ pip3 install mkdocs
 ```
-then
+Then make a site and enter those folder.
 ```bash
 $ mkdocs new site
 $ cd site
 ```
-then
+Then to  see local website view.
 ```bash
 $ mkdocs serve
 ```
-to see local website view.
+
 then install mkdocs-material theme
 ```bash
 $ pip3 install mkdocs-material
@@ -34,7 +36,7 @@ then add some mkdocs plugin.
 ```bash
 $ pip3 install mkdocs-simple-hooks
 ```
-to make Readme.md to index.md, push a python file in source directory.
+To make Readme.md to index.md, push a python file in source directory.
 
 hook.py
 ```python3
@@ -52,8 +54,9 @@ plugins:
   - mkdocs-simple-hooks:
       hooks:
         on_pre_build: "hooks:copy_readme"
-then edit some minor things in mcdocs.yml.
+
 ```
+then edit some minor things in mcdocs.yml.
 ## theme modification in mkdocs.yml
 ```yml
 theme:
@@ -129,7 +132,7 @@ pip3 install \
   
   
   ## deploying this site in github pages
-  make a .github/workflow/build.yml file for deploying in ubuntu server
+  make a .github/workflows/build.yml file for deploying in ubuntu server
   ```yml
   name: build
 on:
