@@ -56,13 +56,13 @@ plugins:
         on_pre_build: "hooks:copy_readme"
 
 ```
-then edit some minor things in mcdocs.yml.
+Then edit some minor things in mcdocs.yml.
 ## Theme modification in mkdocs.yml
 ```yml
-theme:
-  name: material
-  palette:
 
+ theme:
+   name: material
+   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
@@ -116,7 +116,7 @@ theme:
   - meta
   ```
   ## Make a shell script for installing pip packages
-  installed extra pakages except mkdocs-simple-hooks for later updates in this site.
+  Installed extra pakages except mkdocs-simple-hooks for later updates in this site.
   ```bash
   #!/bin/bash
 
@@ -132,7 +132,7 @@ pip3 install \
   
   
   ## Deploying this site in github pages
-  make a .github/workflows/build.yml file for deploying in ubuntu server
+  Make a .github/workflows/build.yml file for deploying in ubuntu server
   ```yml
   name: build
 on:
