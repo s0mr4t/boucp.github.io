@@ -67,7 +67,7 @@ Then edit some minor things in mcdocs.yml.
 
 ```yml
 
- theme:
+theme:
    name: material
    palette:
     # Palette toggle for automatic mode
@@ -98,10 +98,10 @@ Then edit some minor things in mcdocs.yml.
     - search.suggest
     - content.action.edit
     - content.action.view
- ```
+```
   
-  ## Markdown modification
-  ```yml
+## Markdown modification
+```yml
     markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
@@ -118,13 +118,13 @@ Then edit some minor things in mcdocs.yml.
       emoji_index: !!python/name:materialx.emoji.twemoji 
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - meta
-  ```
-  ## Make a shell script for installing pip packages
-  Installed extra pakages except mkdocs-simple-hooks for later updates in this site.
-  ```bash
+```
+## Make a shell script for installing pip packages
+Installed extra pakages except mkdocs-simple-hooks for later updates in this site.
+```bash
   #!/bin/bash
 
-pip3 install \
+  pip3 install \
     mkdocs-material \
     mkdocs-macros-plugin \
     mkdocs-literate-nav \
@@ -132,23 +132,23 @@ pip3 install \
     mkdocs-git-revision-date-localized-plugin \
     mkdocs-simple-hooks \
     mkdocs-git-committers-plugin-2
-  ```
+```
   
   
-  ## Deploying this site in github pages
-  Make a .github/workflows/build.yml file for deploying in ubuntu server
-  ```yml
+## Deploying this site in github pages
+Make a .github/workflows/build.yml file for deploying in ubuntu server
+```yml
   name: build
-on:
-  push:
-    branches:
+  on:
+    push:
+     branches:
       - master
-permissions:
-  contents: write
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+  permissions:
+     contents: write
+   jobs:
+      deploy:
+        runs-on: ubuntu-latest
+          steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
@@ -159,7 +159,7 @@ jobs:
           path: .cache
       - run: ./pip-install.sh
       - run: mkdocs gh-deploy --force
-    ```
+```
     
     
   
