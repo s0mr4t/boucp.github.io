@@ -1,5 +1,5 @@
 # Backtracing
-also called recursive backtracing. 
+also called recursive backtracing. may be called "clever brute force" (i don't know)
 ## Remember things
 - satisfied some constraints.
 - explicit and implicit constriants.
@@ -10,7 +10,7 @@ also called recursive backtracing.
 - dead node
 - answer node
 
-## Psudocode
+## N-Queen Psudocode
 
 === "Place"
     ```python3
@@ -31,7 +31,7 @@ also called recursive backtracing.
                  else
                    Nqueen(k+1,n) 
     ```
-## Implement 
+## N-Queen Implement 
 
 === "Python(place)"
     ```python3
