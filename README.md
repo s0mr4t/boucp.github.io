@@ -1,8 +1,4 @@
----
-title: Main Page
-search:
-  exclude: true
----
+
 # BOU-CP WEBSITE
 
 [![Contributors](https://img.shields.io/github/contributors/boucp/boucp.github.io.svg)](https://github.com/boucp/boucp.github.io/graphs/contributors)
