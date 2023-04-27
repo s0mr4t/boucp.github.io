@@ -72,5 +72,5 @@ also called recursive backtracing. may be called "clever brute force" (i don't k
     nqueen(1,n)
 
     ```
-   ## Related Problems
-   - [UVa 725 - Division](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=9&page=show_problem&problem=666)
+## Related Problems
+- [UVa 725 - Division](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=9&page=show_problem&problem=666)
