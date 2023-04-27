@@ -1,3 +1,9 @@
+---
+title: Main Page
+search:
+  exclude: true
+---
+# BOU-CP WEBSITE
 
 [![Contributors](https://img.shields.io/github/contributors/boucp/boucp.github.io.svg)](https://github.com/boucp/boucp.github.io/graphs/contributors)
 [![Pull Requests](https://img.shields.io/github/issues-pr/cp-algorithms/cp-algorithms.svg)](https://github.com/boucp/boucp.github.io/pulls)
@@ -58,6 +64,7 @@ plugins:
 ```
 Then edit some minor things in mcdocs.yml.
 ## Theme modification in mkdocs.yml
+
 ```yml
 
  theme:
@@ -68,21 +75,18 @@ Then edit some minor things in mcdocs.yml.
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
-
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
-  
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil-box-outline
@@ -94,7 +98,7 @@ Then edit some minor things in mcdocs.yml.
     - search.suggest
     - content.action.edit
     - content.action.view
-  ```
+ ```
   
   ## Markdown modification
   ```yml
