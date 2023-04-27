@@ -6,28 +6,153 @@
 [![Translation Progress](https://img.shields.io/badge/translation_progress-85.2%25-yellowgreen.svg)](https://github.com/boucp/boucp.github.io/wiki/Translation-Progress)
 
 
-This site is mainly created for storing main topic about algorithm, data structure and topic included problems.
+This site is mainly created for storing main topic about algorithm, data structure and related problems.
 
 # How this site created
-thanks to mcdocs and mcdocs-material open source developers.
-this site is created by python package.
+Thanks to mcdocs and mcdocs-material open source developers.
+This site is created only by python packages.
 first install python and then install pip in terminal.
 then
-```python3
-$ pip install mkdocs
+```bash
+$ pip3 install mkdocs
 ```
 then
-```python3
+```bash
 $ mkdocs new site
 $ cd site
 ```
 then
-```python3
+```bash
 $ mkdocs serve
 ```
 to see local website view.
 then install mkdocs-material theme
-```python3
-$ pip install mkdocs-material
+```bash
+$ pip3 install mkdocs-material
 ```
+then add some mkdocs plugin.
+```bash
+$ pip3 install mkdocs-simple-hooks
+```
+to make Readme.md to index.md, push a python file in source directory.
+
+hook.py
+```python3
+import shutil
+
+def copy_readme(*args, **kwargs):
+    shutil.copy("README.md", "src/index.md")
+```
+
+
+## Add plugins in mkdocs.yml
+```yml
+plugins:
+  - search
+  - mkdocs-simple-hooks:
+      hooks:
+        on_pre_build: "hooks:copy_readme"
 then edit some minor things in mcdocs.yml.
+```
+## theme modification in mkdocs.yml
+```yml
+theme:
+  name: material
+  palette:
+
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil-box-outline
+    view: material/eye
+  features:
+    - navigation.tracking
+    - navigation.tabs
+    - toc.integrate
+    - search.suggest
+    - content.action.edit
+    - content.action.view
+  ```
+  
+  ## markdown modification
+  ```yml
+    markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+      tex_inline_wrap: ['$', '$']
+      tex_block_wrap: ['$$', '$$']
+  - pymdownx.highlight
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - meta
+  ```
+  ## make a shell script for installing pip packages
+  installed extra pakages except mkdocs-simple-hooks for later updates in this site.
+  ```bash
+  #!/bin/bash
+
+pip3 install \
+    mkdocs-material \
+    mkdocs-macros-plugin \
+    mkdocs-literate-nav \
+    mkdocs-git-authors-plugin \
+    mkdocs-git-revision-date-localized-plugin \
+    mkdocs-simple-hooks \
+    mkdocs-git-committers-plugin-2
+  ```
+  
+  
+  ## deploying this site in github pages
+  make a .github/workflow/build.yml file for deploying in ubuntu server
+  ```yml
+  name: build
+on:
+  push:
+    branches:
+      - master
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: ./pip-install.sh
+      - run: mkdocs gh-deploy --force
+    ```
+    
+    
+  
