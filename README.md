@@ -1,4 +1,4 @@
-# BOU-CP
+
 [![Contributors](https://img.shields.io/github/contributors/boucp/boucp.github.io.svg)](https://github.com/boucp/boucp.github.io/graphs/contributors)
 [![Pull Requests](https://img.shields.io/github/issues-pr/cp-algorithms/cp-algorithms.svg)](https://github.com/boucp/boucp.github.io/pulls)
 [![Closed Pull Requests](https://img.shields.io/github/issues-pr-closed/boucp/boucp.github.io.svg)](https://github.com/boucp/boucp.github.io/pulls?q=is%3Apr+is%3Aclosed)
@@ -57,7 +57,7 @@ plugins:
 
 ```
 then edit some minor things in mcdocs.yml.
-## theme modification in mkdocs.yml
+## Theme modification in mkdocs.yml
 ```yml
 theme:
   name: material
@@ -96,7 +96,7 @@ theme:
     - content.action.view
   ```
   
-  ## markdown modification
+  ## Markdown modification
   ```yml
     markdown_extensions:
   - pymdownx.arithmatex:
@@ -115,7 +115,7 @@ theme:
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - meta
   ```
-  ## make a shell script for installing pip packages
+  ## Make a shell script for installing pip packages
   installed extra pakages except mkdocs-simple-hooks for later updates in this site.
   ```bash
   #!/bin/bash
@@ -131,7 +131,7 @@ pip3 install \
   ```
   
   
-  ## deploying this site in github pages
+  ## Deploying this site in github pages
   make a .github/workflows/build.yml file for deploying in ubuntu server
   ```yml
   name: build
