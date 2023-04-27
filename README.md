@@ -10,7 +10,7 @@
 
 This site is mainly created for storing main topic about algorithm, data structure and related problems.
 
-# How this site created
+## How this site created
 Thanks to mkdocs and mkdocs-material open source python developers.
 This site is created only by python packages.
 There are a lot of ways to build and deploy mkdocs static site.
